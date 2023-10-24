@@ -9,6 +9,11 @@ switch ($_GET['users']):
         \App\Controllers\UsersController\showAction($connexion, $user_id);
         break;
 
+    case 'loginForm':
+        include_once '../app/controllers/usersController.php';
+        \App\Controllers\UsersController\loginFormAction($connexion);
+        break;
+
     default:
         include_once '../app/controllers/usersController.php';
         \App\Controllers\UsersController\indexAction($connexion);

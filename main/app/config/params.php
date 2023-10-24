@@ -17,3 +17,4 @@ define('DISPATCHER_NAME', 'index.php');
 
 // Définissions des titres
 define('TITRE_ACCUEIL', "Liste des Recettes - Liste des Chefs");
+define('TITRE_USERS_LOGINFORM', "Connexion au backoffice");

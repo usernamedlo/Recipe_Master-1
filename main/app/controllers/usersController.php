@@ -36,7 +36,6 @@ function indexAction(\PDO $connexion, $id = null)
 }
 
 
-
 function showAction(\PDO $connexion, int $id)
 {
     include_once '../app/models/usersModel.php';
@@ -51,5 +50,16 @@ function showAction(\PDO $connexion, int $id)
     // avec le tampon, on inclut la vue dans le $content
     ob_start();
     include '../app/views/users/show.php';
+    $content = ob_get_clean();
+}
+
+function loginFormAction(\PDO $connexion)
+{
+    // je charge la vue loginForm dans $content
+    include_once '../app/models/usersModel.php';
+    global $title, $content;
+    $title = TITRE_USERS_LOGINFORM;
+    ob_start();
+    include '../app/views/users/loginForm.php';
     $content = ob_get_clean();
 }
