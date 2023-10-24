@@ -1,0 +1,37 @@
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+# RewriteBase "/.../"
+
+
+#--------------------------------------------------
+# ROUTES
+#--------------------------------------------------
+# ROUTE LISTE DES RECETTES
+# PATTERN: /recipes
+# TARGET: ?recipes=index
+RewriteRule ^recipes$ index.php?recipes=index [L]
+
+# ROUTE DETAIL DES RECETTES
+# PATTERN: /recipes/{id}/{slug}
+# TARGET: ?recipes=show&id=x
+RewriteRule ^recipes\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)*[a-z0-9]$ index.php?recipes=show&id=$1 [L]
+# exemple d'URL qu'on pourra avoir avec cette réécriture URL SEO-friendly: 
+#/recipes/123/my-delicious-recipe 
+
+# ROUTE LISTE DES USERS
+# PATTERN: /users
+# TARGET: ?users=index
+RewriteRule ^users$ index.php?users=index [L]
+
+# ROUTE DETAIL DES USERS
+# PATTERN: /users/{id}/{slug}
+# TARGET: ?users=show&id=x
+RewriteRule ^users\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)*[a-z0-9]$ index.php?users=show&id=$1 [L]
+
+# --------------------------------------------------
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+# ROUTE PAR DEFAUT
+# PATTERN: /
+# URL: /index.php
+
+RewriteRule ^(.*)$ index.php [L]
