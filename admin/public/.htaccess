@@ -1,0 +1,17 @@
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+# RewriteBase "/.../"
+
+
+#--------------------------------------------------
+# ROUTES
+#--------------------------------------------------
+
+# ROUTE PAR DEFAUT
+# --------------------------------------------------
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+
+# PATTERN: /
+# URL: /index.php
+
+RewriteRule ^(.*)$ index.php [L]

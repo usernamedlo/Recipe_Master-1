@@ -63,3 +63,19 @@ function loginFormAction(\PDO $connexion)
     include '../app/views/users/loginForm.php';
     $content = ob_get_clean();
 }
+
+function loginAction(\PDO $connexion, $data)
+{
+    // je demande le user qui correspond au email/password
+    include_once '../app/models/usersModel.php';
+    $user = UsersModel\findOneByLoginPwd($connexion, $data);
+
+    // je redirige vers le backoffice si c'est ok
+    if ($user):
+        $_SESSION['user'] = $user;
+        header('location: ' . ADMIN_ROOT);
+        // je redirige vers le loginForm si pas ok
+    else:
+        header('location:' . PUBLIC_ROOT . 'users/login/form');
+    endif;
+}

@@ -17,8 +17,9 @@ function slugify($str, $delimiter = '-') //il faut changer cette variable en tru
 
     // Étape 4 et 5 : Remplacement et suppression des caractères
     $patterns = [
-        '/[^A-Za-z0-9-]+/',  // Caractères non alphanumériques
-        '/[\s-]+/'           // Espaces et tirets multiples
+        '/[^A-Za-z0-9-]+/',
+        // Caractères non alphanumériques
+        '/[\s-]+/' // Espaces et tirets multiples
     ];
     foreach ($patterns as $pattern) {
         $str = preg_replace($pattern, $delimiter, $str);

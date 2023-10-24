@@ -5,7 +5,7 @@ session_start();
 require_once '../app/config/params.php';
 
 // 2. Charge les constantes
-// require_once '../core/constantes.php';
+require_once '../core/constantes.php';
 
 // 3. Charge la connexion
 require_once '../core/connexion.php';
