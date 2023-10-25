@@ -17,3 +17,4 @@ define('DISPATCHER_NAME', 'index.php');
 
 // Définissions des titres
 define('TITRE_USERS_DASHBOARD', "Dashboard");
+define('TITRE_RECIPES_INDEX', "Liste Des Recettes");

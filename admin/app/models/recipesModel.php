@@ -98,6 +98,9 @@ function findAllRecipes(\PDO $connexion): array
     $sql = "SELECT 
                 d.id AS dish_id,
                 d.name AS dish_name,
+                d.prep_time AS dish_prep_time,
+                d.portions AS portions,
+                d.type_id AS dish_type,
                 ROUND(AVG(r.value), 2) AS avg_rating,
                 d.description AS description, 
                 u.name AS user_name,
@@ -108,8 +111,7 @@ function findAllRecipes(\PDO $connexion): array
             LEFT JOIN users u ON d.user_id = u.id
             LEFT JOIN comments c ON d.id = c.dish_id
             GROUP BY d.id, u.name
-            ORDER BY d.created_at DESC
-            LIMIT 9;
+            ORDER BY d.created_at DESC;
             ";
 
     $rs = $connexion->query($sql);

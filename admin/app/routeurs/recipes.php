@@ -1,14 +1,14 @@
 <?php
 
+use \app\controllers\recipesController;
+
+include_once '../app/controllers/recipesController.php';
+
+
 switch ($_GET['recipes']):
 
-    case 'show':
+    case 'index':
         include_once '../app/controllers/recipesController.php';
-        \App\Controllers\RecipesController\showAction($connexion, $_GET['id']);
-        break;
-
-    default:
-        include_once '../app/controllers/recipesController.php';
-        \App\Controllers\RecipesController\indexAction($connexion);
+        recipesController\indexAction($connexion);
         break;
 endswitch;

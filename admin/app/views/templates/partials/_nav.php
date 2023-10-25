@@ -19,15 +19,15 @@
             aria-expanded="false">GESTION <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">GESTION DES RECETTES</li>
-            <li><a href="#">Liste des recettes</a></li>
-            <li><a href="#">Ajouter une recette</a></li>
-            <li><a href="#">Modifier une recette</a></li>
-            <li><a href="#">Supprimer une recette</a></li>
+            <li><a href="recipes">Liste des recettes</a></li>
+            <li><a href="recipes/add">Ajouter une recette</a></li>
+            <li><a href="recipes/edit">Modifier une recette</a></li>
+            <li><a href="recipes/delete">Supprimer une recette</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">GESTION DES CATÉGORIES</li>
             <li><a href="#">Liste des catégories</a></li>
             <li><a href="#">Ajouter une catégorie</a></li>
-            <li><a href="#">Modifierr une catégorie</a></li>
+            <li><a href="#">Modifier une catégorie</a></li>
             <li><a href="#">Supprimer une catégorie</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">GESTION DES TAGS</li>

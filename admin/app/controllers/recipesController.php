@@ -9,11 +9,13 @@ use App\Models\CommentsModel;
 
 function indexAction(\PDO $connexion)
 {
+    // Je demande la liste des recettes au modèle
     include_once '../app/models/recipesModel.php';
     $allRecipes = recipesModel\findAllRecipes($connexion);
 
+    // Je charge la vue index dans $content
     global $title, $content;
-    $title = "Recipes";
+    $title = "TITRE_RECIPES_INDEX";
     ob_start();
     include '../app/views/recipes/index.php';
     $content = ob_get_clean();
