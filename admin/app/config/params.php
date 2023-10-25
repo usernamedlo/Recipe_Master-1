@@ -19,3 +19,5 @@ define('DISPATCHER_NAME', 'index.php');
 define('TITRE_USERS_DASHBOARD', "Dashboard");
 define('TITRE_RECIPES_INDEX', "Liste Des Recettes");
 define('TITRE_USERS_INDEX', "Liste Des Users");
+define('TITRE_CATEGORIES_INDEX', "Liste Des Categories");
+define('TITRE_INGREDIENTS_INDEX', "Liste Des Ingrédients");

@@ -9,6 +9,10 @@ if (isset($_GET["users"])):
 elseif (isset($_GET["recipes"])):
     include_once '../app/routeurs/recipes.php';
 
+    // ROUTE DES CATEGORIES
+elseif (isset($_GET["categories"])):
+    include_once '../app/routeurs/categories.php';
+
     //ROUTE PAR DEFAUT
 else:
     include_once "../app/controllers/usersController.php";

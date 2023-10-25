@@ -21,16 +21,3 @@ function indexAction(\PDO $connexion)
     $content = ob_get_clean();
 
 }
-
-function showAction(\PDO $connexion, int $id)
-{
-    include_once '../app/models/categoriesModel.php';
-    $categorie = CategoriesModel\findOneById($connexion, $id);
-
-    global $title, $content;
-    $title = $categorie['name']; //vient de la bdd
-    // avec le tampon, on inclut la vue dans le $content
-    ob_start();
-    include '../app/views/categories/show.php';
-    $content = ob_get_clean();
-}

@@ -23,6 +23,14 @@ RewriteEngine on
     # TARGER: ?recipes=index
     RewriteRule ^recipes$ index.php?recipes=index [L]
 
+#--------------------------------------------------
+# ROUTE DES CATEGORIES
+# --------------------------------------------------
+    # LISTE DES CATEGORIES
+    # PATTERN: /categories
+    # TARGER: ?categories=index
+    RewriteRule ^categories$ index.php?categories=index [L]
+
 
 # ROUTE PAR DEFAUT
 # PATTERN: /

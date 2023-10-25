@@ -14,9 +14,10 @@ function getAllCategories(\PDO $connexion): array
 
     $sql = "SELECT
                 id, 
-                name 
+                name,
+                description
             FROM types_of_dishes
-            ORDER BY name ASC;
+            ORDER BY id ASC;
            ";
 
     $rs = $connexion->query($sql);

@@ -25,7 +25,7 @@
             <li><a href="recipes/delete">Supprimer une recette</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">GESTION DES CATÉGORIES</li>
-            <li><a href="#">Liste des catégories</a></li>
+            <li><a href="categories">Liste des catégories</a></li>
             <li><a href="#">Ajouter une catégorie</a></li>
             <li><a href="#">Modifier une catégorie</a></li>
             <li><a href="#">Supprimer une catégorie</a></li>
