@@ -8,6 +8,7 @@ use Core\Tools;
 <h1>
   <?php echo TITRE_RECIPES_INDEX ?>
 </h1>
+<a type="button" class="add"> Ajouter une recette </a>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -38,7 +39,6 @@ use Core\Tools;
           <?php echo $allRecipe['user_name'] ?>
         </td>
         <td>
-          <button type="button" class="add"> Ajouter </button>
           <button type="button" class="edit"> Modifier </button>
           <button type="button" class="delete"> Supprimer </button>
         </td>

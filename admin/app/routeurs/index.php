@@ -13,6 +13,10 @@ elseif (isset($_GET["recipes"])):
 elseif (isset($_GET["categories"])):
     include_once '../app/routeurs/categories.php';
 
+    // ROUTE DES INGREDIENTS
+elseif (isset($_GET["ingredients"])):
+    include_once '../app/routeurs/ingredients.php';
+
     //ROUTE PAR DEFAUT
 else:
     include_once "../app/controllers/usersController.php";

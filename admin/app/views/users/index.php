@@ -7,6 +7,10 @@ use Core\Tools;
 ?>
 <h1>
   <?php echo TITRE_USERS_INDEX ?>
+  <div>
+    <a type="button" class="add"> Ajouter un utilisateur </a>
+  </div>
+
 </h1>
 <table class="table table-bordered">
   <thead>
@@ -38,7 +42,6 @@ use Core\Tools;
           <?php echo $allUser['bio'] ?>
         </td>
         <td>
-          <button type="button" class="add"> Ajouter </button>
           <button type="button" class="edit"> Modifier </button>
           <button type="button" class="delete"> Supprimer </button>
         </td>

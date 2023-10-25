@@ -31,6 +31,14 @@ RewriteEngine on
     # TARGER: ?categories=index
     RewriteRule ^categories$ index.php?categories=index [L]
 
+#--------------------------------------------------
+# ROUTE DES INGREDIENTS
+# --------------------------------------------------
+    # LISTE DES INGREDIENTS
+    # PATTERN: /ingredients
+    # TARGER: ?ingredients=index
+    RewriteRule ^ingredients$ index.php?ingredients=index [L]
+
 
 # ROUTE PAR DEFAUT
 # PATTERN: /

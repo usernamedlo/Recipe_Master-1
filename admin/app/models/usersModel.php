@@ -18,7 +18,7 @@ function findAllUsers(\PDO $connexion): array
                 u.biography AS bio
             FROM users u
             GROUP BY u.id
-            ORDER BY u.created_at DESC;
+            ORDER BY u.id ASC;
             ";
 
     $rs = $connexion->query($sql);

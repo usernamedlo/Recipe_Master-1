@@ -6,29 +6,29 @@ use Core\Tools;
 
 ?>
 <h1>
-    <?php echo TITRE_CATEGORIES_INDEX ?>
+    <?php echo TITRE_INGREDIENTS_INDEX ?>
 </h1>
-<a type="button" class="add"> Ajouter une catégorie </a>
+<a type="button" class="add"> Ajouter un ingrédient </a>
 <table class="table table-bordered">
     <thead>
         <tr>
             <th>id</th>
             <th>Name</th>
-            <th>Description</th>
+            <th>Unit</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($allCategories as $allCategory): ?>
+        <?php foreach ($allIngredients as $allIngredient): ?>
             <tr>
                 <td>
-                    <?php echo $allCategory['id'] ?>
+                    <?php echo $allIngredient['id'] ?>
                 </td>
                 <td>
-                    <?php echo $allCategory['name'] ?>
+                    <?php echo $allIngredient['name'] ?>
                 </td>
                 <td>
-                    <?php echo $allCategory['description'] ?>
+                    <?php echo $allIngredient['unit'] ?>
                 </td>
                 <td>
                     <button type="button" class="edit"> Modifier </button>
