@@ -30,14 +30,14 @@
             <li><a href="#">Modifier une catégorie</a></li>
             <li><a href="#">Supprimer une catégorie</a></li>
             <li role="separator" class="divider"></li>
-            <li class="dropdown-header">GESTION DES TAGS</li>
+            <li class="dropdown-header">GESTION DES INGREDIENTS</li>
             <li><a href="#">Liste des ingrédients</a></li>
             <li><a href="#">Ajouter un ingrédient</a></li>
             <li><a href="#">Modifier un ingrédient</a></li>
             <li><a href="#">Suprrimer un ingrédient</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">GESTION DES UTILISATEURS</li>
-            <li><a href="#">Liste des utilisateurs</a></li>
+            <li><a href="users">Liste des utilisateurs</a></li>
             <li><a href="#">Ajouter un utilisateur</a></li>
             <li><a href="#">Modifier un utilisateur</a></li>
             <li><a href="#">Suprrimer un utilisateur</a></li>

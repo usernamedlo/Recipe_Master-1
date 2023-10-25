@@ -10,6 +10,11 @@ RewriteEngine on
     # TARGER: ?users=logout
     RewriteRule ^users\/logout$ index.php?users=logout [L]
 
+    # LISTE DES USERS
+    # PATTERN: /users
+    # TARGER: ?users=index
+    RewriteRule ^users$ index.php?users=index [L]
+
 #--------------------------------------------------
 # ROUTE DES RECETTES
 # --------------------------------------------------
