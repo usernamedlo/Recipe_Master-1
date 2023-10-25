@@ -1,29 +1,16 @@
 <?php
+use \App\Controllers\UsersController;
 
-$user_id = isset($_GET['id']) ? $_GET['id'] : null;
+include_once '../app/controllers/UsersController.php';
 
 switch ($_GET['users']):
 
-    case 'show':
-        include_once '../app/controllers/usersController.php';
-        \App\Controllers\UsersController\showAction($connexion, $user_id);
+    case 'logout':
+        \App\Controllers\UsersController\logoutAction();
         break;
 
-    case 'loginForm':
-        include_once '../app/controllers/usersController.php';
-        \App\Controllers\UsersController\loginFormAction($connexion);
-        break;
-
-    case 'login':
-        include_once '../app/controllers/usersController.php';
-        \App\Controllers\UsersController\loginAction($connexion, [
-            'email' => $_POST['pseudo'],
-            'password' => $_POST['password']
-        ]);
-        break;
 
     default:
-        include_once '../app/controllers/usersController.php';
         \App\Controllers\UsersController\indexAction($connexion);
         break;
 endswitch;

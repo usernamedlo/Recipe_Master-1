@@ -2,16 +2,17 @@
 RewriteEngine on
 # RewriteBase "/.../"
 
-
 #--------------------------------------------------
-# ROUTES
-#--------------------------------------------------
+# ROUTE DES USERS
+# --------------------------------------------------
+    # DECONNEXION
+    # PATTERN: /users/logout
+    # TARGER: ?users=logout
+    RewriteRule ^users\/logout$ index.php?users=logout [L]
 
 # ROUTE PAR DEFAUT
-# --------------------------------------------------
-RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
-
 # PATTERN: /
 # URL: /index.php
-
+# --------------------------------------------------
+RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]

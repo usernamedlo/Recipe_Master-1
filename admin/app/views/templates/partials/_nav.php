@@ -35,8 +35,11 @@
             <li><a href="#">Ajouter un utilisateur</a></li>
           </ul>
         </li>
+        <li class="active"><a href="users/logout">DECONNEXION</a></li>
       </ul>
+
     </div>
     <!--/.nav-collapse -->
+
   </div>
 </nav>

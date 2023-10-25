@@ -13,3 +13,15 @@ function dashboardAction(\PDO $connexion)
     include '../app/views/users/dashboard.php';
     $content = ob_get_clean();
 }
+
+function logoutAction()
+{
+    // Je tue la variable de session user
+
+    unset($_SESSION['user']);
+
+    // Je redirige vers le site public
+
+    header('location: ' . PUBLIC_ROOT);
+
+}
