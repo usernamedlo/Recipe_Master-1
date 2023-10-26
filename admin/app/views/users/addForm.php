@@ -1,35 +1,59 @@
-<?php
+<div class="page-header mt-3">
+    <h1>Ajout d'un utilisateur</h1>
+</div>
+<div class="mb-3">
+    <a href="<?php echo ADMIN_ROOT; ?>/users" class="btn btn-secondary">Retour à la liste des utilisateurs</a>
+</div>
+<div class="card bg-gray mb-3">
+    <div class="card-body">
+        <form action="<?php echo ADMIN_ROOT; ?>/users/add/insert" method="post" class="form-horizontal">
+            <fieldset>
+                <legend>Données de l'utilisateur</legend>
 
-?>
-<div class="page-header">
-    <h1>
-        Ajout d'un utilisateur
-    </h1>
-</div>
-<div>
-    <a href="<?php echo ADMIN_ROOT; ?>/users">Retour à la liste des utilisateurs</a> <br><br>
-</div>
-<form action="<?php echo ADMIN_ROOT; ?>/users/add/insert" method="post">
-    <fieldset>
-        <legend>Données de l'utilisateur</legend>
-        <div>
-            <label for="test">Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" />
-            <br><br>
-            <label for="test">email</label>
-            <input type="text" id="email" name="email" placeholder="Email" />
-            <br><br>
-            <label for="test">Password</label>
-            <input type="text" id="password" name="password" placeholder="Password" />
-            <br><br>
-            <label for="test">Biography</label>
-            <input type="text" id="biography" name="biography" placeholder="Biography" />
-            <br><br>
-            <!-- <label for="test">Image</label>
-            <input type="image" id="image" name="image" placeholder="Image" /> -->
-        </div><br>
-    </fieldset>
-    <div>
-        <input type="submit" class="btn btn-lg btn-primary" />
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Password" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="biography" class="col-sm-2 control-label">Biography</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="biography" name="biography"
+                            placeholder="Biography" />
+                    </div>
+                </div>
+                <!--
+        <div class="form-group">
+            <label for="image" class="col-sm-2 control-label">Image</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+        </div>
+        -->
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" class="btn btn-lg btn-primary" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
-</form>
+</div>

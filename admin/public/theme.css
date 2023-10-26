@@ -16,3 +16,7 @@ body {
 .theme-showcase .navbar .container {
   width: auto;
 }
+
+.bg-gray {
+  background-color: #f0f0f0e6;
+}

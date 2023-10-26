@@ -27,19 +27,24 @@ function findAllUsers(\PDO $connexion): array
 
 function insert(\PDO $connexion, array $data = null)
 {
+    $data['created_at'] = date('Y-m-d H:i:s');
 
     $sql = "INSERT INTO users
             SET name= :name,
                 email= :email,
                 password= :password,
-                biography= :biography
-            ";
+                biography= :biography,
+                created_at= :created_at;
+           ";
+
     $rs = $connexion->prepare($sql);
     $rs->bindValue(":name", $data["name"], \PDO::PARAM_STR);
     $rs->bindValue(":email", $data["email"], \PDO::PARAM_STR);
     $rs->bindValue(":password", $data["password"], \PDO::PARAM_STR);
     $rs->bindValue(":biography", $data["biography"], \PDO::PARAM_STR);
+    $rs->bindValue(":created_at", $data["created_at"], \PDO::PARAM_STR);
 
     $rs->execute();
+
     return $connexion->lastInsertId();
 }

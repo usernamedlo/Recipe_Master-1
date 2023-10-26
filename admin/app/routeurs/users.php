@@ -14,7 +14,7 @@ switch ($_GET['users']):
         break;
 
     case 'add':
-        UsersController\addAction($connexion);
+        UsersController\addAction($connexion, $_POST);
         break;
 
     default:

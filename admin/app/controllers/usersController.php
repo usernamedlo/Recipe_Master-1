@@ -55,8 +55,8 @@ function addAction(\PDO $connexion, array $data = null)
 {
     // Je demande au modèle d'ajouter l'utilisateur
     include_once '../app/models/usersModel.php';
-    $id = User\insert($connexion, $data);
+    $id = UsersModel\insert($connexion, $data);
 
     // Je redirige vers la liste des utilisateurs
-    header('location: ' . ADMIN_ROOT . 'users');
+    header('location: ' . ADMIN_ROOT . '/users');
 }

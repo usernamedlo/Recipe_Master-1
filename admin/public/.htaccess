@@ -17,13 +17,13 @@ RewriteEngine on
 
     # AJOUT DE USERS
     # PATTERN: /users/add/form
-    # TARGER: ?users=add
-    RewriteRule ^users\/add\/insert$ index.php?users=add [L]
-
-    # AJOUT DE USERS
-    # PATTERN: /users/add/insert
     # TARGER: ?users=addForm
     RewriteRule ^users\/add\/form$ index.php?users=addForm [L]
+
+    # INSERTION DE USERS
+    # PATTERN: /users/add/insert
+    # TARGER: ?users=add
+    RewriteRule ^users\/add\/insert$ index.php?users=add [L]
 
 #--------------------------------------------------
 # ROUTE DES RECETTES

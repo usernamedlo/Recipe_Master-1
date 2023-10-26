@@ -7,7 +7,7 @@
 <h1>
   <?php echo TITRE_USERS_INDEX ?>
   <div>
-    <a href="<?php echo ADMIN_ROOT; ?>/users/add/form" class="add"> Ajouter un utilisateur </a>
+    <a href="<?php echo ADMIN_ROOT; ?>/users/add/form" class="btn btn-primary rounded"> Ajouter un utilisateur </a>
   </div>
 </h1>
 
