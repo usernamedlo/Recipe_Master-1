@@ -43,10 +43,20 @@ function indexAction(\PDO $connexion)
 
 function addFormAction()
 {
-    global $title, $content, $allUsers;
+    global $title, $content;
     $title = "TITRE_USERS_ADDFORM";
     ob_start();
     include '../app/views/users/addForm.php';
     $content = ob_get_clean();
 
+}
+
+function addAction(\PDO $connexion, array $data = null)
+{
+    // Je demande au modèle d'ajouter l'utilisateur
+    include_once '../app/models/usersModel.php';
+    $id = User\insert($connexion, $data);
+
+    // Je redirige vers la liste des utilisateurs
+    header('location: ' . ADMIN_ROOT . 'users');
 }

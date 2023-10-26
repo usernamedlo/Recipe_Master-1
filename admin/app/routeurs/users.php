@@ -13,6 +13,10 @@ switch ($_GET['users']):
         UsersController\addFormAction();
         break;
 
+    case 'add':
+        UsersController\addAction($connexion);
+        break;
+
     default:
         UsersController\indexAction($connexion);
         break;

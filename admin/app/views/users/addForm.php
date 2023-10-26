@@ -9,7 +9,7 @@
 <div>
     <a href="<?php echo ADMIN_ROOT; ?>/users">Retour à la liste des utilisateurs</a> <br><br>
 </div>
-<form action="users/add/insert" method="post">
+<form action="<?php echo ADMIN_ROOT; ?>/users/add/insert" method="post">
     <fieldset>
         <legend>Données de l'utilisateur</legend>
         <div>
@@ -23,7 +23,7 @@
             <input type="text" id="password" name="password" placeholder="Password" />
             <br><br>
             <label for="test">Biography</label>
-            <input type="number" id="biography" name="biography" placeholder="Biography" />
+            <input type="text" id="biography" name="biography" placeholder="Biography" />
             <br><br>
             <!-- <label for="test">Image</label>
             <input type="image" id="image" name="image" placeholder="Image" /> -->
