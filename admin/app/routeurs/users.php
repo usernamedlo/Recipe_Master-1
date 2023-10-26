@@ -6,11 +6,14 @@ include_once '../app/controllers/UsersController.php';
 switch ($_GET['users']):
 
     case 'logout':
-        \App\Controllers\UsersController\logoutAction();
+        UsersController\logoutAction();
         break;
 
+    case 'addForm':
+        UsersController\addFormAction();
+        break;
 
     default:
-        \App\Controllers\UsersController\indexAction($connexion);
+        UsersController\indexAction($connexion);
         break;
 endswitch;

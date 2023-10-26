@@ -15,6 +15,11 @@ RewriteEngine on
     # TARGER: ?users=index
     RewriteRule ^users$ index.php?users=index [L]
 
+    # AJOUT DE USERS
+    # PATTERN: /users/add/form
+    # TARGER: ?users=addForm
+    RewriteRule ^users\/add\/form$ index.php?users=addForm [L]
+
 #--------------------------------------------------
 # ROUTE DES RECETTES
 # --------------------------------------------------

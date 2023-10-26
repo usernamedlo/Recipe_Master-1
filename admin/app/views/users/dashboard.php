@@ -1,6 +1,12 @@
 <div class="jumbotron">
     <h1>Bienvenue
-        <?php echo $_SESSION['user']['name']; ?>
+        <?php
+        if (isset($_SESSION['user']) && isset($_SESSION['user']['name'])) {
+            echo $_SESSION['user']['name'];
+        } else {
+            echo "Guest";
+        }
+        ?>
     </h1>
     <p>
         This is a admin template showcasing the optional theme stylesheet included

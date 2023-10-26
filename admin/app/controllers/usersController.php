@@ -22,7 +22,7 @@ function logoutAction()
 
     // Je redirige vers le site public
 
-    header('location: ' . PUBLIC_ROOT);
+    header('Location: ' . PUBLIC_ROOT);
 
 }
 
@@ -37,6 +37,16 @@ function indexAction(\PDO $connexion)
     $title = "TITRE_USERS_INDEX";
     ob_start();
     include '../app/views/users/index.php';
+    $content = ob_get_clean();
+
+}
+
+function addFormAction()
+{
+    global $title, $content, $allUsers;
+    $title = "TITRE_USERS_ADDFORM";
+    ob_start();
+    include '../app/views/users/addForm.php';
     $content = ob_get_clean();
 
 }

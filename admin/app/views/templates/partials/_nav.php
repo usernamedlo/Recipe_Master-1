@@ -13,24 +13,24 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">DASHBOARD</a></li>
+        <li class="active"><a href="users/dashboard.php">DASHBOARD</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
             aria-expanded="false">GESTION <span class="caret"></span></a>
           <ul class="dropdown-menu">
 
             <li class="dropdown-header">GESTION DES UTILISATEURS</li>
-            <li><a href="users">Liste des utilisateurs</a></li>
-            <li><a href="#">Ajouter un utilisateur</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/users">Liste des utilisateurs</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/users/add/form">Ajouter un utilisateur</a></li>
             <li><a href="#">Modifier un utilisateur</a></li>
-            <li><a href="#">Suprrimer un utilisateur</a></li>
+            <li><a href="#">Supprimer un utilisateur</a></li>
             <li role="separator" class="divider"></li>
 
             <li class="dropdown-header">GESTION DES RECETTES</li>
-            <li><a href="recipes">Liste des recettes</a></li>
-            <li><a href="recipes/add">Ajouter une recette</a></li>
-            <li><a href="recipes/edit">Modifier une recette</a></li>
-            <li><a href="recipes/delete">Supprimer une recette</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/recipes">Liste des recettes</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/recipes/add/form">Ajouter une recette</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/recipes/edit">Modifier une recette</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/recipes/delete">Supprimer une recette</a></li>
             <li role="separator" class="divider"></li>
 
             <li class="dropdown-header">GESTION DES CATÉGORIES</li>
@@ -47,7 +47,7 @@
             <li><a href="#">Supprimer un ingrédient</a></li>
           </ul>
         </li>
-        <li class="active"><a href="users/logout">DECONNEXION</a></li>
+        <li class="active"><a href="<?php echo ADMIN_ROOT; ?>/users/logout">DECONNEXION</a></li>
       </ul>
 
     </div>
