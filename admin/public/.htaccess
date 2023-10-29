@@ -7,22 +7,22 @@ RewriteEngine on
 # --------------------------------------------------
     # DECONNEXION
     # PATTERN: /users/logout
-    # TARGER: ?users=logout
+    # TARGET: ?users=logout
     RewriteRule ^users\/logout$ index.php?users=logout [L]
 
     # LISTE DES USERS
     # PATTERN: /users
-    # TARGER: ?users=index
+    # TARGET: ?users=index
     RewriteRule ^users$ index.php?users=index [L]
 
     # AJOUT DE USERS
     # PATTERN: /users/add/form
-    # TARGER: ?users=addForm
+    # TARGET: ?users=addForm
     RewriteRule ^users\/add\/form$ index.php?users=addForm [L]
 
     # INSERTION DE USERS
     # PATTERN: /users/add/insert
-    # TARGER: ?users=add
+    # TARGET: ?users=add
     RewriteRule ^users\/add\/insert$ index.php?users=add [L]
 
 #--------------------------------------------------
@@ -30,15 +30,25 @@ RewriteEngine on
 # --------------------------------------------------
     # LISTE DES RECETTES
     # PATTERN: /recipes
-    # TARGER: ?recipes=index
+    # TARGET: ?recipes=index
     RewriteRule ^recipes$ index.php?recipes=index [L]
+
+    # AJOUT DE RECETTES
+    # PATTERN: /recipes/add/form
+    # TARGET: ?recipes=addForm
+    RewriteRule ^recipes\/add\/form$ index.php?recipes=addForm [L]
+
+    # INSERTION DE RECETTES
+    # PATTERN: /recipes
+    # TARGET: ?recipes=index
+    RewriteRule ^recipes\/add\/insert$ index.php?recipes=add [L]
 
 #--------------------------------------------------
 # ROUTE DES CATEGORIES
 # --------------------------------------------------
     # LISTE DES CATEGORIES
     # PATTERN: /categories
-    # TARGER: ?categories=index
+    # TARGET: ?categories=index
     RewriteRule ^categories$ index.php?categories=index [L]
 
 #--------------------------------------------------
@@ -46,7 +56,7 @@ RewriteEngine on
 # --------------------------------------------------
     # LISTE DES INGREDIENTS
     # PATTERN: /ingredients
-    # TARGER: ?ingredients=index
+    # TARGET: ?ingredients=index
     RewriteRule ^ingredients$ index.php?ingredients=index [L]
 
 

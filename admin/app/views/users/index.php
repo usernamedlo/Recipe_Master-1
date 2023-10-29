@@ -1,9 +1,3 @@
-<?php
-
-//include_once '../app/models/usersModel.php';
-
-?>
-
 <h1>
   <?php echo TITRE_USERS_INDEX ?>
   <div>

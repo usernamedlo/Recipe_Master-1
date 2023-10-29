@@ -3,8 +3,9 @@
 namespace App\Controllers\RecipesController;
 
 use App\Models\RecipesModel;
-use App\Models\CommentsModel;
-
+use App\Models\UsersModel;
+use App\Models\CategoriesModel;
+use App\Models\IngredientsModel;
 
 
 function indexAction(\PDO $connexion)
@@ -22,19 +23,46 @@ function indexAction(\PDO $connexion)
 
 }
 
-function showAction(\PDO $connexion, int $id)
+
+function addFormAction(\PDO $connexion)
 {
-    include_once '../app/models/recipesModel.php';
-    $recipe = RecipesModel\findOneById($connexion, $id);
+    // je recherche les chefs
+    include_once '../app/models/usersModel.php';
+    $allUsers = \App\Models\UsersModel\findAllUsers($connexion);
 
-    include_once '../app/models/commentsModel.php';
-    $comments = CommentsModel\findAllCommentsByDishId($connexion, $id);
+    // je recherche les categories
+    include_once '../app/models/categoriesModel.php';
+    $allCategories = \App\Models\CategoriesModel\findAllCategories($connexion);
+    
+    // je recherche les ingrédients
+    include_once '../app/models/ingredientsModel.php';
+    $allIngredients = \App\Models\IngredientsModel\findAllIngredients($connexion);
 
+    // Je charge la vue recipes/addForm dans $content
     global $title, $content;
-    $title = $recipe['dish_name']; //vient de la bdd
-    // avec le tampon, on inclut la vue dans le $content
+    $title = "TITRE_RECIPES_ADDFORM";
     ob_start();
-
-    include '../app/views/recipes/show.php';
+        include '../app/views/recipes/addForm.php';
     $content = ob_get_clean();
+}
+
+
+function addAction(\PDO $connexion,  array $data = null)
+{
+    // Je demande au modèle d'ajouter la recette
+    include_once '../app/models/recipesModel.php';
+    
+    $id = RecipesModel\insert($connexion, $data);
+
+    // Si des ingrédients ont été cochés
+    if (isset($data['ingredients']) && is_array($data['ingredients'])) {
+        foreach ($data['ingredients'] as $ingredientId) {
+            $quantity = $data['quantity-' . $ingredientId];
+            RecipesModel\insertDishIngredients($connexion, $id, $ingredientId, $quantity);
+        }
+    }
+
+
+    // Je redirige vers la liste des recettes
+    header('location: ' . ADMIN_ROOT . '/recipes');
 }

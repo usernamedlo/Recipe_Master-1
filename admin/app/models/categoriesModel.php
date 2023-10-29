@@ -9,15 +9,15 @@ namespace App\Models\CategoriesModel;
  * @return array
  */
 
-function getAllCategories(\PDO $connexion): array
+function findAllCategories(\PDO $connexion): array
 {
 
     $sql = "SELECT
-                id, 
-                name,
-                description
+                id AS category_id, 
+                name AS category_name,
+                description AS category_description
             FROM types_of_dishes
-            ORDER BY id ASC;
+            ORDER BY name ASC;
            ";
 
     $rs = $connexion->query($sql);

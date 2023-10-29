@@ -10,7 +10,7 @@ switch ($_GET['users']):
         break;
 
     case 'addForm':
-        UsersController\addFormAction();
+        UsersController\addFormAction($connexion);
         break;
 
     case 'add':
