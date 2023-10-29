@@ -22,29 +22,21 @@
             <li class="dropdown-header">GESTION DES UTILISATEURS</li>
             <li><a href="<?php echo ADMIN_ROOT; ?>/users">Liste des utilisateurs</a></li>
             <li><a href="<?php echo ADMIN_ROOT; ?>/users/add/form">Ajouter un utilisateur</a></li>
-            <li><a href="#">Modifier un utilisateur</a></li>
-            <li><a href="#">Supprimer un utilisateur</a></li>
             <li role="separator" class="divider"></li>
 
             <li class="dropdown-header">GESTION DES RECETTES</li>
             <li><a href="<?php echo ADMIN_ROOT; ?>/recipes">Liste des recettes</a></li>
             <li><a href="<?php echo ADMIN_ROOT; ?>/recipes/add/form">Ajouter une recette</a></li>
-            <li><a href="<?php echo ADMIN_ROOT; ?>/recipes/edit">Modifier une recette</a></li>
-            <li><a href="<?php echo ADMIN_ROOT; ?>/recipes/delete">Supprimer une recette</a></li>
             <li role="separator" class="divider"></li>
 
             <li class="dropdown-header">GESTION DES CATÉGORIES</li>
-            <li><a href="categories">Liste des catégories</a></li>
-            <li><a href="#">Ajouter une catégorie</a></li>
-            <li><a href="#">Modifier une catégorie</a></li>
-            <li><a href="#">Supprimer une catégorie</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/categories">Liste des catégories</a></li>
+            <li><a href="<?php echo ADMIN_ROOT; ?>/categories/add/form">Ajouter une catégorie</a></li>
             <li role="separator" class="divider"></li>
 
             <li class="dropdown-header">GESTION DES INGREDIENTS</li>
-            <li><a href="ingredients">Liste des ingrédients</a></li>
-            <li><a href="#">Ajouter un ingrédient</a></li>
-            <li><a href="#">Modifier un ingrédient</a></li>
-            <li><a href="#">Supprimer un ingrédient</a></li>
+            <li><a href="href=<?php echo ADMIN_ROOT; ?>/ingredients">Liste des ingrédients</a></li>
+            <li><a href="href=<?php echo ADMIN_ROOT; ?>/ingredients">Ajouter un ingrédient</a></li>
           </ul>
         </li>
         <li class="active"><a href="<?php echo ADMIN_ROOT; ?>/users/logout">DECONNEXION</a></li>

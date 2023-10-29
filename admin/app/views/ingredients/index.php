@@ -19,16 +19,16 @@ use Core\Tools;
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($allIngredients as $allIngredient): ?>
+        <?php foreach ($allIngredients as $ingredient): ?>
             <tr>
                 <td>
-                    <?php echo $allIngredient['id'] ?>
+                    <?php echo $ingredient['ingr_id'] ?>
                 </td>
                 <td>
-                    <?php echo $allIngredient['name'] ?>
+                    <?php echo $ingredient['ingr_name'] ?>
                 </td>
                 <td>
-                    <?php echo $allIngredient['unit'] ?>
+                    <?php echo $ingredient['ingr_unit'] ?>
                 </td>
                 <td>
                     <button type="button" class="edit"> Modifier </button>

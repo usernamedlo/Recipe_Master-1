@@ -19,16 +19,16 @@ use Core\Tools;
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($allCategories as $allCategory): ?>
+        <?php foreach ($allCategories as $category): ?>
             <tr>
                 <td>
-                    <?php echo $allCategory['id'] ?>
+                    <?php echo $category['category_id'] ?>
                 </td>
                 <td>
-                    <?php echo $allCategory['name'] ?>
+                    <?php echo $category['category_name'] ?>
                 </td>
                 <td>
-                    <?php echo $allCategory['description'] ?>
+                    <?php echo $category['category_description'] ?>
                 </td>
                 <td>
                     <button type="button" class="edit"> Modifier </button>

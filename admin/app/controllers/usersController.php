@@ -60,3 +60,15 @@ function addAction(\PDO $connexion, array $data = null)
     // Je redirige vers la liste des utilisateurs
     header('location: ' . ADMIN_ROOT . '/users');
 }
+
+function deleteAction(\PDO $connexion, int $id)
+{
+    // Je demande au modèle de supprimer l'utilisateur
+    include_once '../app/models/usersModel.php';
+    
+        $return = UsersModel\delete($connexion, $id);
+        
+    // Je redirige vers la liste des utilisateurs
+    header('location: ' . ADMIN_ROOT . '/users');
+}
+

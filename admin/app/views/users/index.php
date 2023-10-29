@@ -42,7 +42,11 @@
           </td>
           <td>
             <button type="button" class="edit"> Modifier </button>
-            <button type="button" class="delete"> Supprimer </button>
+            <button>
+              <a href="<?php echo ADMIN_ROOT; ?>/users/delete/<?php echo $allUser['user_id'] ?>"type="button" class="delete">
+                Supprimer 
+              </a>
+            </button>
           </td>
         </tr>
 

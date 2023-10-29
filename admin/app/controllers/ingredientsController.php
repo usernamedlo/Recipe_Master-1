@@ -12,7 +12,7 @@ use App\Models\ingredientsModel;
 function indexAction(\PDO $connexion)
 {
     include_once '../app/models/ingredientsModel.php';
-    $allIngredients = IngredientsModel\getAllIngredients($connexion);
+    $allIngredients = IngredientsModel\findAllIngredients($connexion);
 
     global $title, $content;
     $title = "Ingrédients";

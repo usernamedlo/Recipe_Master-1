@@ -17,6 +17,10 @@ switch ($_GET['users']):
         UsersController\addAction($connexion, $_POST);
         break;
 
+    case 'delete':
+        UsersController\deleteAction($connexion, $_GET['id']);
+        break;
+
     default:
         UsersController\indexAction($connexion);
         break;

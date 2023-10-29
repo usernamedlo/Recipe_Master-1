@@ -25,6 +25,11 @@ RewriteEngine on
     # TARGET: ?users=add
     RewriteRule ^users\/add\/insert$ index.php?users=add [L]
 
+    # SUPPRESSION DE USERS
+    # PATTERN: /users/delete/x
+    # TARGET: ?users=delete&id=x
+    RewriteRule ^users\/delete\/([1-9][0-9]*)$ index.php?users=delete&id=$1 [L]
+
 #--------------------------------------------------
 # ROUTE DES RECETTES
 # --------------------------------------------------
