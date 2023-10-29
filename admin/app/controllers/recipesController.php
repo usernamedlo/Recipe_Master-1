@@ -77,3 +77,29 @@ function deleteAction(\PDO $connexion, int $id)
     // Je redirige vers la liste des recettes
     header('location: ' . ADMIN_ROOT . '/recipes');
 }
+
+function editFormAction(\PDO $connexion, int $id)
+{
+    // demande au modèle la recette à afficher dans le formulaire
+    include_once '../app/models/recipesModel.php';
+    $recipe = RecipesModel\findOneById($connexion, $id);
+
+    // // chercher chefs
+    // include_once '../app/models/usersModel.php';
+    // $users = \App\Models\UsersModel\findAllUsers($connexion);
+    // // chercher les catégories
+    // include_once '../app/models/categoriesModel.php';
+    // $categories = \App\Models\CategoriesModel\findAllCategories($connexion);
+
+    // // chercher les ingrédients
+    // include_once '../app/models/ingredientsModel.php';
+    // $ingredients = \App\Models\IngredientsModel\findAllIngredients($connexion);
+
+
+    // Je charge la vue editForm dans $content
+    global $title, $content;
+    $title = "TITRE_RECIPES_EDITFORM";
+    ob_start();
+    include '../app/views/recipes/editForm.php';
+    $content = ob_get_clean();
+}

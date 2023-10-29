@@ -26,6 +26,24 @@ function findAllUsers(\PDO $connexion): array
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
+function findOneById(\PDO $connexion, int $id): array
+{
+    $sql = "SELECT 
+                u.name AS user_name,
+                u.email AS user_email,
+                u.biography AS user_biography,
+                u.picture AS user_picture,
+                u.created_at AS user_creation_date
+            FROM users u
+            WHERE u.id = :id";
+
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+    $rs->execute();
+
+    return $rs->fetch(\PDO::FETCH_ASSOC);
+}
+
 function insert(\PDO $connexion, array $data = null)
 {
     $data['created_at'] = date('Y-m-d H:i:s');
@@ -87,4 +105,26 @@ function delete(\PDO $connexion, int $id): bool
     $rs->bindParam(":id", $id, \PDO::PARAM_INT);
     
     return $rs->execute();
+}
+
+function update(\PDO $connexion,int $id)
+{
+    $sql = "UPDATE users 
+            SET user_name= :user_name,
+                user_email= :user_email,
+                user_password= :user_password,
+                user_biography= :user_biography
+            WHERE user_id = :user_id;
+           ";
+
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(":user_name", $data["user_name"], \PDO::PARAM_STR);
+    $rs->bindValue(":user_email", $data["user_email"], \PDO::PARAM_STR);
+    $rs->bindValue(":user_password", $data["user_password"], \PDO::PARAM_STR);
+    $rs->bindValue(":user_biography", $data["user_biography"], \PDO::PARAM_STR);
+    $rs->bindValue(":user_id", $data["user_id"], \PDO::PARAM_INT);
+
+    return intval($rs->execute());
+
+    
 }

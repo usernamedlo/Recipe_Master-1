@@ -34,6 +34,31 @@ function findAllRecipes(\PDO $connexion): array
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
 
+function findOneById(\PDO $connexion, int $id): array
+{
+    $sql = "SELECT d.*, u.name as user_name, u.id as user_id
+            FROM dishes d
+            JOIN users u on us.id = di.user_id
+            WHERE di.id =:id;
+            ";
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+    $rs->execute();
+
+    return $rs->fetch(\PDO::FETCH_ASSOC);
+}
+
+function findIngByDishId(\PDO $connexion, int $id): array
+{
+    $sql = "SELECT ingredient_id
+    FROM dishes_has_ingredients
+    WHERE dish_id = :id;";
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+    $rs->execute();
+    return $rs->fetchAll(\PDO::FETCH_COLUMN);
+}
+
 function insert(\PDO $connexion, array $data): int
 {
     $sql = "INSERT INTO dishes
