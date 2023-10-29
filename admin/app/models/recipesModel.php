@@ -74,3 +74,20 @@ function insertDishIngredients(\PDO $connexion, int $id, int $ingredientId,strin
     return $rs->fetchAll(\PDO::FETCH_COLUMN);
 }
 
+function delete(\PDO $connexion, int $id): bool
+{
+    // 1. Je supprime d'abord les relations associées dans `dishes_has_ingredients`
+    $sql = "DELETE FROM dishes_has_ingredients 
+                   WHERE dish_id 
+                   IN (SELECT id FROM dishes WHERE id = :id)";
+    $rs = $connexion->prepare($sql);
+    $rs->bindParam(":id", $id, \PDO::PARAM_INT);
+    $rs->execute();
+    
+    // 2. Je supprime la recette
+    $sql = "DELETE FROM dishes WHERE id = :id";
+    $rs = $connexion->prepare($sql);
+    $rs->bindParam(":id", $id, \PDO::PARAM_INT);
+   
+    return $rs->execute();
+}

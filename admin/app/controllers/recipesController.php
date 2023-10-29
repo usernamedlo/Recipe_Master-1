@@ -62,7 +62,18 @@ function addAction(\PDO $connexion,  array $data = null)
         }
     }
 
+    // Je redirige vers la liste des recettes
+    header('location: ' . ADMIN_ROOT . '/recipes');
+}
 
+function deleteAction(\PDO $connexion, int $id)
+{
+
+    // Je demande au modèle de supprimer la recette
+    include_once '../app/models/recipesModel.php';
+    
+        $return = RecipesModel\delete($connexion,$id);
+        
     // Je redirige vers la liste des recettes
     header('location: ' . ADMIN_ROOT . '/recipes');
 }

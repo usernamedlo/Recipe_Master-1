@@ -48,6 +48,11 @@ RewriteEngine on
     # TARGET: ?recipes=index
     RewriteRule ^recipes\/add\/insert$ index.php?recipes=add [L]
 
+    # SUPPRESSION DE RECETTES
+    # PATTERN: /recipes/delete/x
+    # TARGET: ?recipes=delete&id=x
+    RewriteRule ^recipes\/delete\/([1-9][0-9]*)$ index.php?recipes=delete&id=$1 [L]
+
 #--------------------------------------------------
 # ROUTE DES CATEGORIES
 # --------------------------------------------------

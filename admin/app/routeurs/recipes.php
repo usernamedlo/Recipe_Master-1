@@ -11,12 +11,16 @@ switch ($_GET['recipes']):
         recipesController\indexAction($connexion);
         break;
 
-        case 'addForm':
-            recipesController\addFormAction($connexion);
-            break;
-        
-            case 'add':
-            recipesController\addAction($connexion, $_POST);
-            break;
+    case 'addForm':
+        recipesController\addFormAction($connexion);
+        break;
+    
+    case 'add':
+        recipesController\addAction($connexion, $_POST);
+        break;
+
+    case 'delete':
+        recipesController\deleteAction($connexion, $_GET['id']);
+        break;
 endswitch;
 

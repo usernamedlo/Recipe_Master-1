@@ -42,11 +42,12 @@
           </td>
           <td>
             <button type="button" class="edit"> Modifier </button>
-            <button>
-              <a href="<?php echo ADMIN_ROOT; ?>/users/delete/<?php echo $allUser['user_id'] ?>"type="button" class="delete">
-                Supprimer 
+            
+              <a href="<?php echo ADMIN_ROOT; ?>/users/delete/<?php echo $allUser['user_id'] ?>"
+              class="btn btn-danger">
+              Supprimer 
               </a>
-            </button>
+        
           </td>
         </tr>
 

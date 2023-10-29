@@ -63,7 +63,11 @@ use Core\Tools;
 
         <td>
           <button type="button" class="edit"> Modifier </button>
-          <button type="button" class="delete"> Supprimer </button>
+          <a href="<?php echo ADMIN_ROOT; ?>/recipes/delete/<?php echo $allRecipe['dish_id'] ?>" 
+             class="btn btn-danger">
+             Supprimer
+          </a>
+
         </td>
       </tr>
     <?php endforeach; ?>
