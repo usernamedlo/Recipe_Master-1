@@ -36,9 +36,10 @@ RewriteEngine on
     RewriteRule ^users\/edit\/form\/([1-9][0-9]*)$ index.php?users=editForm&id=$1 [L]
 
     # MODIFICATION DE USERS: UPDATE
-    # PATTERN: /users/edit/x
-    # TARGET: ?users=edit&id=x
-    RewriteRule ^users\/edit\/([1-9][0-9]*)$ index.php?users=edit&id=$1 [L]
+    # PATTERN: /users/edit
+    # TARGET: ?users=edit
+    RewriteRule ^users\/edit$ index.php?users=edit [L]
+
 #--------------------------------------------------
 # ROUTE DES RECETTES
 # --------------------------------------------------

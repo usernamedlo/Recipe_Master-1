@@ -29,6 +29,7 @@ function findAllUsers(\PDO $connexion): array
 function findOneById(\PDO $connexion, int $id): array
 {
     $sql = "SELECT 
+                u.id AS user_id,
                 u.name AS user_name,
                 u.email AS user_email,
                 u.biography AS user_biography,
@@ -79,7 +80,7 @@ function hasAssociatedDishes(\PDO $connexion, int $userId): bool
     $rs->bindParam(":id", $userId, \PDO::PARAM_INT);
     $rs->execute();
     $count = $rs->fetchColumn();
-    
+
     return $count > 0;
 }
 
@@ -103,28 +104,22 @@ function delete(\PDO $connexion, int $id): bool
     $sql = "DELETE FROM users WHERE id = :id";
     $rs = $connexion->prepare($sql);
     $rs->bindParam(":id", $id, \PDO::PARAM_INT);
-    
+
     return $rs->execute();
 }
 
-function update(\PDO $connexion,int $id)
+function update(\PDO $connexion, array $data)
 {
     $sql = "UPDATE users 
-            SET user_name= :user_name,
-                user_email= :user_email,
-                user_password= :user_password,
-                user_biography= :user_biography
-            WHERE user_id = :user_id;
+            SET name= :name
+            WHERE id = :id;
            ";
 
     $rs = $connexion->prepare($sql);
-    $rs->bindValue(":user_name", $data["user_name"], \PDO::PARAM_STR);
-    $rs->bindValue(":user_email", $data["user_email"], \PDO::PARAM_STR);
-    $rs->bindValue(":user_password", $data["user_password"], \PDO::PARAM_STR);
-    $rs->bindValue(":user_biography", $data["user_biography"], \PDO::PARAM_STR);
-    $rs->bindValue(":user_id", $data["user_id"], \PDO::PARAM_INT);
+    $rs->bindValue(":name", $data["user_name"], \PDO::PARAM_STR);
+    $rs->bindValue(":id", $data["user_id"], \PDO::PARAM_INT);
 
-    return intval($rs->execute());
+    return $rs->execute();
 
-    
+
 }

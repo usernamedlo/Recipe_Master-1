@@ -62,7 +62,7 @@ use Core\Tools;
         </td>
 
         <td>
-          <a href="<?php echo ADMIN_ROOT; ?>/recipes/edit/form<?php echo $allRecipe['dish_id'] ?>" 
+          <a href="<?php echo ADMIN_ROOT; ?>/recipes/edit/form/<?php echo $allRecipe['dish_id'] ?>" 
              class="edit">
              Modifier
           </a>

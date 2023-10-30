@@ -6,10 +6,9 @@
 </div>
 <div class="card bg-gray mb-3">
     <div class="card-body">
-        <form action="<?php echo ADMIN_ROOT; ?>/users<?php echo $user['user_name']; ?>"
+        <form action="<?php echo ADMIN_ROOT; ?>/users/edit"
               method="post"
               class="edit" >
-            <!-- <input type="hidden" name="id" value="<?php echo $user['user_id']; ?>"> -->
             <fieldset>
                 <legend>Données de l'utilisateur</legend>
 
@@ -22,6 +21,11 @@
                             id="user_name" 
                             name="user_name" 
                             value="<?php echo $user['user_name']; ?>" />
+                        <input 
+                            type="hidden" 
+                            id="user_id" 
+                            name="user_id" 
+                            value="<?php echo $user['user_id']; ?>" />
                     </div>
                 </div>
                 <div class="form-group">
