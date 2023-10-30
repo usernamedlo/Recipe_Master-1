@@ -36,9 +36,9 @@ function findAllRecipes(\PDO $connexion): array
 
 function findOneById(\PDO $connexion, int $id): array
 {
-    $sql = "SELECT d.*, u.name as user_name, u.id as user_id
-            FROM dishes d
-            JOIN users u on us.id = di.user_id
+    $sql = "SELECT di.*, us.name as user_name, us.id as user_id
+            FROM dishes di
+            JOIN users us on us.id = di.user_id
             WHERE di.id =:id;
             ";
     $rs = $connexion->prepare($sql);
